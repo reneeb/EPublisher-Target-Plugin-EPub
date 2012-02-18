@@ -2,7 +2,6 @@ package EPublisher::Target::Plugin::EPub;
 
 use strict;
 use warnings;
-use Carp;
 use Data::UUID;
 use EBook::EPUB;
 use File::Basename;
@@ -13,8 +12,7 @@ use EPublisher;
 use EPublisher::Target::Base;
 our @ISA = qw(EPublisher::Target::Base);
 
-our $VERSION = 0.01;
-our $DEBUG   = 0;
+our $VERSION = 0.1;
 
 sub deploy {
     my ($self) = @_;
@@ -410,6 +408,10 @@ sub add_cover {
 
 1;
 
+__END__
+
+=encoding utf8
+
 =head1 NAME
 
 EPublisher::Target::Plugin::EPub - Use EPub as a target for EPublisher
@@ -428,8 +430,6 @@ creates the output.
 
   $EPub->deploy;
 
-=head2 testresult
-
 =head1 YAML SPEC
 
   EPubTest:
@@ -440,6 +440,28 @@ creates the output.
       author: reneeb
       output: /path/to/test.epub
 
+=head1 TODO
+
+=head2 document methods
+
+=over
+
+=item add_to_table_of_contents
+
+=item table_of_contents
+
+=item _html_header
+
+=item set_table_of_contents
+
+=item get_css_file
+
+=item user_css
+
+=item add_cover
+
+=back
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2010 Renee Baecker, all rights reserved.
@@ -449,6 +471,6 @@ under the same terms of Artistic License 2.0.
 
 =head1 AUTHOR
 
-Renee Baecker (E<lt>module@renee-baecker.deE<gt>)
+Renee Baecker (E<lt>module@renee-baecker.deE<gt>) and Boris Däppen (E<lt>boris_daeppen@bluewin.chE<gt>)
 
 =cut

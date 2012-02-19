@@ -73,7 +73,7 @@ sub deploy {
         
         my ($in_fh_temp,$in_file_temp) = tempfile();
         binmode $in_fh_temp, ":encoding($encoding)";
-        print $in_fh_temp $pod;
+        print $in_fh_temp $pod->{pod} || '';
         close $in_fh_temp;
         
         my $in_fh;

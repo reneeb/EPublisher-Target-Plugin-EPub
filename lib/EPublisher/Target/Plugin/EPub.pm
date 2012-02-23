@@ -1,5 +1,7 @@
 package EPublisher::Target::Plugin::EPub;
 
+# ABSTRACT: Use EPub as a target for EPublisher
+
 use strict;
 use warnings;
 use Data::UUID;
@@ -409,8 +411,6 @@ sub add_cover {
 1;
 
 __END__
-
-# ABSTRACT: Use EPub as a target for EPublisher
 
 =encoding utf8
 

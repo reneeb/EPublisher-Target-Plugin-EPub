@@ -439,6 +439,9 @@ creates the output.
       type: EPub
       author: reneeb
       output: /path/to/test.epub
+      title: The Books Title
+      cover: /path/to/an/image/for/the/cover.jpg
+      encoding: utf-8
 
 =head1 TODO
 
@@ -464,13 +467,19 @@ creates the output.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2010 Renee Baecker, all rights reserved.
+Copyright 2012 Renee Baecker, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms of Artistic License 2.0.
 
 =head1 AUTHOR
 
-Renee Baecker (E<lt>module@renee-baecker.deE<gt>) and Boris Däppen (E<lt>boris_daeppen@bluewin.chE<gt>)
+=over
+
+=item Code: Renee Baecker (E<lt>module@renee-baecker.deE<gt>)
+
+=item Package: Boris Däppen (E<lt>boris_daeppen@bluewin.chE<gt>)
+
+=back
 
 =cut

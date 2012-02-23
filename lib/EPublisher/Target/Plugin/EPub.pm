@@ -375,7 +375,7 @@ sub add_cover {
 
         # This is the new/overridden section.
         if ( defined $url ) {
-            $url = Pod::Simple::XHTML::encode_entities( $url );
+            $url = $self->encode_entities( $url );
         }
 
         # If it's an unknown type, use an attribute-less <a> like HTML.pm.

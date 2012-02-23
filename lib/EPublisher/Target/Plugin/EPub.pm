@@ -12,7 +12,7 @@ use EPublisher;
 use EPublisher::Target::Base;
 our @ISA = qw(EPublisher::Target::Base);
 
-our $VERSION = 0.1;
+our $VERSION = 0.11;
 
 sub deploy {
     my ($self) = @_;

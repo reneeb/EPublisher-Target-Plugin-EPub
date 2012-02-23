@@ -465,6 +465,10 @@ creates the output.
 
 =back
 
+=head2 write more tests
+
+Untile now the test just cover the basics. Tests of output should be added.
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2012 Renee Baecker, all rights reserved.

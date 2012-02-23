@@ -410,11 +410,9 @@ sub add_cover {
 
 __END__
 
+# ABSTRACT: Use EPub as a target for EPublisher
+
 =encoding utf8
-
-=head1 NAME
-
-EPublisher::Target::Plugin::EPub - Use EPub as a target for EPublisher
 
 =head1 SYNOPSIS
 

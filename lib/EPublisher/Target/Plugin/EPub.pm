@@ -72,9 +72,18 @@ sub deploy {
         $parser->index(0);
         
         $parser->accept_directive_as_processed( 'image' );
+
+        # we have to decrease all headings to the layer below
+        $pod->{pod} =~ s/=[hH][eE][aA][dD]1[ ]/=head2 /g; 
+        $pod->{pod} =~ s/=[hH][eE][aA][dD]2[ ]/=head3 /g; 
+        $pod->{pod} =~ s/=[hH][eE][aA][dD]3[ ]/=head4 /g; 
+        #TODO: need a fix for head4
         
         my ($in_fh_temp,$in_file_temp) = tempfile();
         binmode $in_fh_temp, ":encoding($encoding)";
+        # adding a title, given from the meta-data
+        print $in_fh_temp "=head1 $pod->{title}\n\n" || ''; 
+        # adding the content
         print $in_fh_temp $pod->{pod} || '';
         close $in_fh_temp;
         
@@ -95,8 +104,13 @@ sub deploy {
         unlink $xhtml_filename;
         unlink $in_file_temp;
         
-        $self->add_to_table_of_contents( $counter, $parser->{to_index} );
-        
+        # the commented code is used if TOC is taken from html itself
+        #$self->add_to_table_of_contents( $counter, $parser->{to_index} );
+        # but we take the TOC from the data structure as provided
+        $self->add_to_table_of_contents( $counter,
+                                         [[1, $pod->{title}, $pod->{title}]]
+                                       );
+
         # add images
         my @images = $parser->images_to_import();
         for my $image ( @images ) {

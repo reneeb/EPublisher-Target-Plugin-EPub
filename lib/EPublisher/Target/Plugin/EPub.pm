@@ -481,21 +481,4 @@ creates the output.
 
 Untile now the test just cover the basics. Tests of output should be added.
 
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2012 Renee Baecker, all rights reserved.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms of Artistic License 2.0.
-
-=head1 AUTHOR
-
-=over
-
-=item Code: Renee Baecker (E<lt>module@renee-baecker.deE<gt>)
-
-=item Package: Boris Däppen (E<lt>boris_daeppen@bluewin.chE<gt>)
-
-=back
-
 =cut

@@ -104,12 +104,7 @@ sub deploy {
         unlink $xhtml_filename;
         unlink $in_file_temp;
         
-        # the commented code is used if TOC is taken from html itself
-        #$self->add_to_table_of_contents( $counter, $parser->{to_index} );
-        # but we take the TOC from the data structure as provided
-        $self->add_to_table_of_contents( $counter,
-                                         [[1, $pod->{title}, $pod->{title}]]
-                                       );
+        $self->add_to_table_of_contents( $counter, $parser->{to_index} );
 
         # add images
         my @images = $parser->images_to_import();

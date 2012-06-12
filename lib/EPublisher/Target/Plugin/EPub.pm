@@ -14,7 +14,7 @@ use EPublisher;
 use EPublisher::Target::Base;
 our @ISA = qw(EPublisher::Target::Base);
 
-our $VERSION = 0.2;
+our $VERSION = 0.3;
 
 sub deploy {
     my ($self) = @_;
@@ -27,7 +27,7 @@ sub deploy {
     my $out_filename   = $self->_config->{output}   || '';
     my $css_filename   = $self->_config->{css}      || '';
     my $cover_filename = $self->_config->{cover}    || '';
-    my $encoding       = $self->_config->{encoding} || 'utf-8';
+    my $encoding       = $self->_config->{encoding} || ':encoding(UTF-8)';
     my $version        = 0;
     
     # Create EPUB object
@@ -80,7 +80,7 @@ sub deploy {
         #TODO: need a fix for head4
         
         my ($in_fh_temp,$in_file_temp) = tempfile();
-        binmode $in_fh_temp, ":encoding($encoding)";
+        binmode $in_fh_temp, $encoding;
         # adding a title, given from the meta-data
         print $in_fh_temp "=head1 $pod->{title}\n\n" || ''; 
         # adding the content
@@ -88,7 +88,7 @@ sub deploy {
         close $in_fh_temp;
         
         my $in_fh;
-        open $in_fh, "<:encoding($encoding)", $in_file_temp;
+        open $in_fh, "<$encoding", $in_file_temp;
     
         my ($xhtml_fh, $xhtml_filename) = tempfile();
         

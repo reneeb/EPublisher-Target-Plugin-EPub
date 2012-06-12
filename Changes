@@ -1,5 +1,9 @@
 Changes file for EPublisher::Target::Plugin::EPub
 
+0.3 2012-06-12
+
+     + Set correct encoding, due to change of EBook::MOBI
+
 0.2 2012-03-19
      + removed license and author in POD because of dzil
      + adopted data interface to source plugins (seperate title per pod)

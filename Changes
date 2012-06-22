@@ -1,5 +1,8 @@
 Changes file for EPublisher::Target::Plugin::EPub
 
+0.4 2012-06-22
+     + cpan2ebook issue #21: all epub ebooks have the same identifier. Now use create_str instead of create_from_name_str for UUID
+
 0.3 2012-06-12
 
      + Set correct encoding, due to change of EBook::MOBI

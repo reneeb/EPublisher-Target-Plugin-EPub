@@ -43,7 +43,7 @@ sub deploy {
 
     # Add the Dublin Core UUID.
     my $du = Data::UUID->new();
-    my $uuid = $du->create_from_name_str( NameSpace_URL, 'www.perl.org' );
+    my $uuid = $du->create_str;
 
     {
 
